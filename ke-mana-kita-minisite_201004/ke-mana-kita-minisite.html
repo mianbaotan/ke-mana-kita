@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!--Countdown Clock Javascript-->
+    <script>
+        (function () {
+            const second = 1000,
+                  minute = second * 60,
+                  hour = minute * 60,
+                  day = hour * 24,
+                  berita = "Oct 31, 2020 14:30:00";
+          
+            let countDown = new Date(berita).getTime(),
+                x = setInterval(function() {    
+          
+                  let now = new Date().getTime(),
+                      distance = countDown - now;
+          
+                  document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+          
+                  //do something later when date is reached
+                  if (distance < 0) {
+                    let headline = document.getElementById("headline"),
+                        countdown = document.getElementById("countdown"),
+                        content = document.getElementById("content");
+          
+                    headline.innerText = "Registrations are closed!";
+                    countdown.style.display = "none";
+                    content.style.display = "block";
+          
+                    clearInterval(x);
+                  }
+                  //seconds
+                }, 0)
+            }());
+    </script>
+
+
+<!-------------CSS------------->
+    <style type="text/css">
+    /* general styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    html, body {
+    /*height: 100%;*/
+    margin: 0;
+    }
+
+    body {
+    align-items: center;
+    background-color:#0d1329;
+    display: flex;
+    font-size: 1.4em;
+    font-family: -apple-system, 
+        BlinkMacSystemFont, 
+        "Segoe UI", 
+        Roboto, 
+        Oxygen-Sans, 
+        Ubuntu, 
+        Cantarell, 
+        "Helvetica Neue", 
+        sans-serif;
+
+        background-image: url(source/banner.png);
+    width:100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    }
+
+    p{
+        color: #f2f2f2;
+    }
+
+    .container {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    Height:30%;
+    padding-top:47%;
+    }
+
+    h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+    color: #f2f2f2;
+    font-size: 4rem;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: Bold;
+        letter-spacing: .125rem;
+        color: #f2f2f2;
+        font-size: 1.6rem;
+    }
+
+
+    #berita-countdown{
+    width:81%;
+    background-color:#1c2f73;
+    padding: 35px 0 45px 0;
+    margin:0 auto;
+    }
+
+    #headline{
+    padding-bottom:20px;
+    }
+
+    #countdown ul {
+        width:100%;
+        padding-bottom: 40px;
+    }
+    li {
+    display: inline-block;
+    font-size: 1rem;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    padding:;
+    margin:5px;
+    width:20%;
+    }
+
+    li span {
+    display: block;
+    font-size: 4.5rem;
+    text-align: center;
+    }
+
+    .message {
+    font-size: 4rem;
+    }
+
+    #content {
+    display: none;
+    padding: 1rem;
+    }
+
+    .emoji {
+    padding: 0 .25rem;
+    }
+
+    /*local register button*/
+    #register-button-local{
+    background-color: #1aa54a;
+    width:30%;
+    min-width: 180px;
+    margin: 0 auto;
+    }
+
+    .register-button-local-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: Bold;
+    text-align: center;
+    letter-spacing: .125rem;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    padding: 15px 20px 15px 20px;
+    }
+
+    #banner-header{
+        position: absolute;
+        top:5%;
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+    }
+
+
+    .inline-row {
+        display: flex;
+        justify-content: flex-start;
+        width:100%;
+        flex-wrap: wrap;
+    }
+
+    #summary{
+        width:100%;
+        padding: 10% 0 0 0;
+        margin:0 auto;
+    }
+
+    #summary-header{
+        padding-bottom: 35px;
+    }
+
+    #summary p{
+        width:70%;
+        position: relative;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        padding-bottom: 50px;
+    }
+
+    #speaker{
+        width:100%;
+        padding: 10% 0 0 0;
+    }
+
+    #speaker-header{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .border{
+        width: 81%;
+        padding: 20px 0 20px 0;
+        border:#f2f2f2;
+        border-width: 1px;
+        border-style: solid;
+        margin:0 auto;
+    }
+
+    .speaker-box{
+        width:25%;
+        padding:25px;
+    }
+
+    #speaker .speaker-box h2{
+        padding-bottom: 20px;
+    }
+
+    .speaker-box img{
+    width:80%;
+    padding-bottom: 25px;
+    }
+
+    #speaker .speaker-box p{
+        text-align: left;
+        font-size: 0.7em;
+        padding-top:px;
+        text-align: left;
+        line-height: 1.4em;
+        letter-spacing: 0.01em;
+    }
+
+    #register{
+        width:100%;
+        padding: 10% 0 100px 0;
+        margin:0 auto;
+    }
+
+    #register-header{
+        padding-bottom: 35px;
+    }
+
+    #register p{
+        width:70%;
+        position: relative;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        padding-bottom: 50px;
+    }
+
+    #register-button-local a{
+    text-decoration: none;
+    }
+
+    #register-button{
+    background-color: #1aa54a;
+    width:25%;
+    margin: 0 auto;
+    }
+
+    #register-button a{
+    text-decoration: none;
+    }
+
+    .register-button-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: Bold;
+    text-align: center;
+    letter-spacing: .125rem;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    padding: 15px 20px 15px 20px;
+    }
+
+    @media all and (max-width: 1000px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin: -5px 0 -5px 0;
+        text-align: left;
+    }
+    
+    li {
+        font-size: 0.7rem;
+        padding: .75rem;
+    }
+    
+    li span {
+        font-size: 2rem;
+    }
+
+    #summary p{
+        width:100%;
+        font-size: 1.2rem;
+    }
+
+    .speaker-box{
+        width:50%;
+        padding:10px;
+    }
+
+    #speaker .speaker-box p{
+        font-size: 1.2rem;
+    }
+
+    #register p{
+        width:100%;
+        font-size: 1.2rem;
+    }
+
+    #register-button{
+        width:35%;
+        min-width: 180px;
+    }
+
+    .register-button-text{
+        font-size: 1rem;
+    }
+
+    /*local register button*/
+    #register-button-local{
+        width:30%;
+        min-width: 180px;
+    }
+
+    .register-button-local-text{
+        font-size: 1rem;
+        padding: 15px 20px 15px 20px;
+    }
+
+    #berita-countdown{
+        width:90%;
+        background-color:#1c2f73;
+        padding: 35px 20px 45px 20px;
+        margin:0 auto;
+    }
+
+    }
+
+    @media all and (max-width: 600px) {
+    .speaker-box{
+        width:100%;
+        padding-bottom: 30px;
+    }
+
+    .container {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+    Height:30%;
+    padding-top:47%;
+    }
+
+    @media all and (min-width: 600px) {
+        .speaker-box{
+        width:100%;
+        padding-bottom: 30px;
+    }
+
+    }
+    </style>
+
+<!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  
+    <title>KE MANA KITA</title>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="banner">
+            <!-----------Countdown----------->
+            <div id="berita-countdown">
+
+            <h1 id="headline">AKAN BERMULA</h1>
+                <div id="countdown">
+                <ul>
+                    <li><span id="days"></span>days</li>
+                    <li><span id="hours"></span>Hours</li>
+                    <li><span id="minutes"></span>Mins</li>
+                    <li><span id="seconds"></span>Secs</li>
+                </ul>
+                </div>
+
+                <div class="message">
+                    <div id="content">
+                </div>
+                </div>
+
+                <div id="register-button-local">
+                    <a href="#register">
+                    <div class="register-button-local-text">
+                        RESGISTER NOW!
+                    </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-----------summary----------->
+        <div id="summary">
+            <h1 id="summary-header">
+                <div class="border">
+                ACARA
+                </div>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+
+        <!-----------Speakers----------->
+        <div id="speaker" class="row inline-row">
+            
+            <div id="speaker-header">
+                <div class="border">
+                    <h1>PERKONGSIAN</h1>
+                </div>
+            </div>
+
+            <div class="speaker-box">
+                <img src="source/speaker-img.png">
+                <h2>Speaker 1</h2> 
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+          
+            <div class="speaker-box">
+                <img src="source/speaker-img.png">
+                <h2>Speaker 2</h2>  
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+          
+            <div class="speaker-box">
+                <img src="source/speaker-img.png">
+                <h2>Speaker 3</h2>  
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+            <div class="speaker-box">
+                <img src="source/speaker-img.png">
+                <h2>Speaker 4</h2>  
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+
+        </div>
+
+        <!-----------Register----------->
+        <div id="register">
+            <h1 id="register-header">
+                <div class="border">
+                DAFTAR
+                </div>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div id="register-button">
+                <a href="#">
+                <div class="register-button-text">
+                    REGISTER HERE
+                </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
