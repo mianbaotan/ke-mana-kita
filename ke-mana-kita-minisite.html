@@ -187,6 +187,25 @@
         flex-wrap: wrap;
     }
 
+    #summary{
+        width:100%;
+        padding: 10% 0 0 0;
+        margin:0 auto;
+    }
+
+    #summary-header{
+        padding-bottom: 35px;
+    }
+
+    #summary p{
+        width:70%;
+        position: relative;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        padding-bottom: 50px;
+    }
+
     #speaker{
         width:100%;
         padding: 10% 0 0 0;
@@ -198,8 +217,8 @@
     }
 
     .border{
-        width: 55%;
-        padding: 20px;
+        width: 81%;
+        padding: 20px 0 20px 0;
         border:#f2f2f2;
         border-width: 1px;
         border-style: solid;
@@ -292,6 +311,11 @@
         font-size: 2rem;
     }
 
+    #summary p{
+        width:100%;
+        font-size: 1.2rem;
+    }
+
     .speaker-box{
         width:50%;
         padding:10px;
@@ -373,7 +397,7 @@
             <!-----------Countdown----------->
             <div id="berita-countdown">
 
-            <h1 id="headline">COUNTDOWN</h1>
+            <h1 id="headline">AKAN BERMULA</h1>
                 <div id="countdown">
                 <ul>
                     <li><span id="days"></span>days</li>
@@ -399,12 +423,24 @@
             </div>
         </div>
 
+        <!-----------summary----------->
+        <div id="summary">
+            <h1 id="summary-header">
+                <div class="border">
+                ACARA
+                </div>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+
         <!-----------Speakers----------->
         <div id="speaker" class="row inline-row">
             
             <div id="speaker-header">
                 <div class="border">
-                    <h1 >SPEAKERS</h1>
+                    <h1>PERKONGSIAN</h1>
                 </div>
             </div>
 
@@ -446,7 +482,7 @@
         <div id="register">
             <h1 id="register-header">
                 <div class="border">
-                REGISTER
+                DAFTAR
                 </div>
             </h1>
             <p>
@@ -460,6 +496,7 @@
                 </a>
             </div>
         </div>
+
     </div>
 
 </body>
