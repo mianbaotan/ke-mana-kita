@@ -241,6 +241,7 @@
         border-width: 1px;
         border-style: solid;
         margin:0 auto;
+        margin-bottom: 20px;
     }
 
     .speaker-box{
@@ -334,6 +335,7 @@
 
     .border{
         width: 90%;
+        margin-bottom: 20px;
     }
     
     li {
