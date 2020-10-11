@@ -345,6 +345,10 @@
         font-size: 2rem;
     }
 
+    #language-tab{
+        font-size: 1.5rem;
+    }
+
     #summary p{
         width:100%;
         font-size: 1.8rem;
